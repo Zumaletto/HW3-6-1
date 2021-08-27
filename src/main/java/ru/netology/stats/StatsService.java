@@ -12,12 +12,9 @@ public class StatsService {
 
     public long averageSum(long[] sales) {
 
-        int averSum = 0;
-        int sum = 0;
-        for (long element : sales) {
-            sum += element;
-        }
-        averSum = sum / sales.length;
+        long averSum = 0;
+        long totalSum = arraySum(sales);
+        averSum = totalSum / sales.length;
         return averSum;
     }
 
@@ -47,13 +44,7 @@ public class StatsService {
 
     public long monthMaxAverage(long[] sales) {
 
-        int sum = 0;
-        int averSum = 0;
-        for (long element : sales) {
-            sum += element;
-        }
-        averSum = sum / sales.length;
-
+        long averSum = averageSum (sales);
         long amountMonthMax = 0;
         for (long element : sales) {
             if (element > averSum) {
@@ -66,13 +57,7 @@ public class StatsService {
 
     public long monthMinAverage(long[] sales) {
 
-        int sum = 0;
-        int averSum = 0;
-        for (long element : sales) {
-            sum += element;
-        }
-        averSum = sum / sales.length;
-
+        long averSum = averageSum (sales);
         long amountMonthMin = 0;
         for (long element : sales) {
             if (element < averSum) {
